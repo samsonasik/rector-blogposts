@@ -1,4 +1,5 @@
 <?php
+namespace Utils;
 
 return [
     'previous' => ['previuos', 'previuous'],
