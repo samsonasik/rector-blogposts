@@ -224,7 +224,7 @@ vendor/bin/rector process
 
 So we see the "Green" OK:
 
-![Green OK](/how-to-create-typo-variable-fixer/green-ok-first-run.png)
+![green-ok-first-run](https://user-images.githubusercontent.com/459648/96706378-b5391e00-13c0-11eb-944b-a88b8d9e41fd.png)
 
 Now, time to make `refactor` work! We can modify the `refactor` method:
 
@@ -257,7 +257,7 @@ vendor/bin/rector process --dry-run
 
 and we can see:
 
-![Dry Run Typo Fixer](/how-to-create-typo-variable-fixer/dry-run-typo-fixer.png)
+![dry-run-typo-fixer](https://user-images.githubusercontent.com/459648/96706376-b4a08780-13c0-11eb-8aa5-8f3340ae7fe7.png)
 
 Seems great! Let's apply the changes:
 
@@ -265,10 +265,10 @@ Seems great! Let's apply the changes:
 vendor/bin/rector process
 ```
 
-![Typo Fixer Run Succeed](/how-to-create-typo-variable-fixer/typo-fixer-run-succeed.png)
+![typo-fixer-run-succeed](https://user-images.githubusercontent.com/459648/96706371-b36f5a80-13c0-11eb-9e12-f8f3aba0834a.png)
 
 Awesome! We now already make typo fixer succesfully working! Let's run again, and it will take no effect as already fixed:
 
-![Typo Fixer Run Once More](/how-to-create-typo-variable-fixer/typo-fixer-run-once-more.png)
+![typo-fixer-run-once-more](https://user-images.githubusercontent.com/459648/96706367-b23e2d80-13c0-11eb-92d2-a5abce9dcf9f.png)
 
 That's it!
