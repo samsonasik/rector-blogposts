@@ -216,7 +216,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 };
 ```
 
-and test with run ``
+and test with run:
 
 ```bash
 vendor/bin/rector process
@@ -224,7 +224,7 @@ vendor/bin/rector process
 
 So we see the "Green" OK:
 
-![Green OK](./green-ok-first-run.png)
+![Green OK](/how-to-create-typo-variable-fixer/green-ok-first-run.png)
 
 Now, time to make `refactor` work! We can modify the `refactor` method:
 
@@ -257,7 +257,7 @@ vendor/bin/rector process --dry-run
 
 and we can see:
 
-![Dry Run Typo Fixer](./dry-run-typo-fixer.png)
+![Dry Run Typo Fixer](/how-to-create-typo-variable-fixer/dry-run-typo-fixer.png)
 
 Seems great! Let's apply the changes:
 
@@ -265,10 +265,10 @@ Seems great! Let's apply the changes:
 vendor/bin/rector process
 ```
 
-![Typo Fixer Run Succeed](./typo-fixer-run-succeed.png)
+![Typo Fixer Run Succeed](/how-to-create-typo-variable-fixer/typo-fixer-run-succeed.png)
 
 Awesome! We now already make typo fixer succesfully working! Let's run again, and it will take no effect as already fixed:
 
-![Typo Fixer Run Once More](./typo-fixer-run-once-more.png)
+![Typo Fixer Run Once More](/how-to-create-typo-variable-fixer/typo-fixer-run-once-more.png)
 
 That's it!
