@@ -30,7 +30,8 @@ final class TypoVariableFixerRule extends AbstractRector
                 continue;
             }
 
-            return new Variable($correctWord);
+            $node->name = $correctWord;
+            return $node;
         }
 
         return null;

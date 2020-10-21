@@ -242,7 +242,8 @@ Now, time to make `refactor` work! We can modify the `refactor` method:
                 continue;
             }
 
-            return new Variable($correctWord);
+            $node->name = $correctWord;
+            return $node;
         }
 
         return null;
