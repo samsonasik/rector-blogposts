@@ -225,3 +225,50 @@ vendor/bin/rector process
 So we see the "Green" OK:
 
 ![Green OK](green-ok-first-run.png)
+
+Now, time to make `refactor` work! We can modify the `refactor` method:
+
+```php
+    public function refactor(Node $node): ?Node
+    {
+        // get the variable name
+        $variableName = $this->getName($node);
+
+        // get the library content
+        $library = include 'utils/library.php';
+
+        foreach ($library as $correctWord => $commonTypos) {
+            if (! in_array($variableName, $commonTypos, true)) {
+                continue;
+            }
+
+            return new Variable($correctWord);
+        }
+
+        return null;
+    }
+```
+
+Above, we find if the variable name is in common typos, then we return with new Variable with the correct word. Now, let's run it with `--dry-run` to see the diff that can be made:
+
+```bash
+vendor/bin/rector process --dry-run
+```
+
+and we can see:
+
+![Dry Run Typo Fixer](dry-run-typo-fixer.png)
+
+Seems great! Let's apply the changes:
+
+```bash
+vendor/bin/rector process
+```
+
+![Typo Fixer Run Succeed](typo-fixer-run-succeed.png)
+
+Awesome! We now already make typo fixer succesfully working! Let's run again, and it will take no effect as already fixed:
+
+![Typo Fixer Run Once More](typo-fixer-run-once-more.png)
+
+That's it!

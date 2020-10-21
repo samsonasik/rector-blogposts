@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-$previuos = 0;
-$begining = 1;
-$statment = $previuos . ' is lower than ' . $begining;
+$previous = 0;
+$beginning = 1;
+$statement = $previous . ' is lower than ' . $beginning;
 

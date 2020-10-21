@@ -19,7 +19,21 @@ final class TypoVariableFixerRule extends AbstractRector
 
     public function refactor(Node $node): ?Node
     {
-        return $node;
+        // get the variable name
+        $variableName = $this->getName($node);
+
+        // get the library content
+        $library = include 'utils/library.php';
+
+        foreach ($library as $correctWord => $commonTypos) {
+            if (! in_array($variableName, $commonTypos, true)) {
+                continue;
+            }
+
+            return new Variable($correctWord);
+        }
+
+        return null;
     }
 
     public function getDefinition(): RectorDefinition
