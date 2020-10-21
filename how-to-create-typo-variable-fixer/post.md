@@ -201,5 +201,27 @@ touch rector.php
 with file `rector.php` content:
 
 ```php
+<?php
 
+use Rector\Core\Configuration\Option;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Utils\Rector\TypoVariableFixerRule;
+
+return static function (ContainerConfigurator $containerConfigurator): void {
+	$parameters = $containerConfigurator->parameters();
+	$parameters->set(Option::PATHS, [__DIR__ . '/app']);
+
+	$services = $containerConfigurator->services();
+	$services->set(TypoVariableFixerRule::class);
+};
 ```
+
+and test with run ``
+
+```bash
+vendor/bin/rector process
+```
+
+So we see the "Green" OK:
+
+![Green OK](green-ok-first-run.png)
