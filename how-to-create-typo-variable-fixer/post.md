@@ -143,7 +143,7 @@ Our directory will looks like the following:
 ├── utils
 │   ├── Rector
 │   │   └── TypoVariableFixerRule.php
-│   └── library.p
+│   └── library.php
 ```
 
 Now, we can start create the `TypoVariableFixerRule`:
