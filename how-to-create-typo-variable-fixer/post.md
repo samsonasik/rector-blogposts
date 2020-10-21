@@ -250,7 +250,7 @@ Now, time to make `refactor` work! We can modify the `refactor` method:
     }
 ```
 
-Above, we find if the variable name is in common typos, then we return with new Variable with the correct word. Now, let's run it with `--dry-run` to see the diff that can be made:
+Above, we find if the variable name is in common typos, then we return node (as variable) with updated its name with the correct word. Now, let's run it with `--dry-run` to see the diff that can be made:
 
 ```bash
 vendor/bin/rector process --dry-run
