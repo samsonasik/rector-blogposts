@@ -192,7 +192,9 @@ final class TypoVariableFixerRule extends AbstractRector
 }
 ```
 
-Above, we extends `AbstractRector` for new Rector rule. We operate with [`nikic/php-parser`](https://github.com/nikic/PHP-Parser) to do refactor. Before we continue, let's register our new `TypoVariableFixerRule` to rector config to ensure it works. We can create rector config as follow:
+Above, we extends `AbstractRector` for new Rector rule. We operate with [`nikic/php-parser`](https://github.com/nikic/PHP-Parser) to do refactor. The `getNodeTypes` returns the node that we want to refactor, at this case, we want to refactor `Variable` node in our `refactor` method.
+
+Before we continue, let's register our new `TypoVariableFixerRule` to rector config to ensure it works. We can create rector config as follow:
 
 ```bash
 touch rector.php
