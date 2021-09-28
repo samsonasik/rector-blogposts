@@ -164,6 +164,6 @@ vendor/bin/rector
 
 ![Screen Shot 2021-09-28 at 09 17 03](https://user-images.githubusercontent.com/459648/135011536-1fa49a8b-f295-4b87-9f2e-5209a2fbc2d8.png)
 
-Now, you have typed property in your code! That's it ;)
+Now, you have typed property in your code!
 
 That's it!
