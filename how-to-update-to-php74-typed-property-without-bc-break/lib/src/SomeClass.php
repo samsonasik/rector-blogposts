@@ -10,5 +10,6 @@ class SomeClass
     /** @var string */
     protected $b;
 
-    private bool $c;
+    /** @var bool */
+    private $c;
 }
