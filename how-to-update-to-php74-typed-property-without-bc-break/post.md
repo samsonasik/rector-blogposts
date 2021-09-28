@@ -1,5 +1,5 @@
-How to Update to PHP 7.4 Typed Property Without BC Break
-========================================================
+How to Update to PHP 7.4 Typed Property Without BC Break with Rector
+====================================================================
 
 [Typed Property](https://wiki.php.net/rfc/typed_properties_v2) is one of the PHP 7.4 feature that allow to write that previously like this:
 
