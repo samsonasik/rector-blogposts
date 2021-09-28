@@ -67,6 +67,8 @@ Fatal error: Type of AChild::$b must be string (as in class SomeClass)
 see https://3v4l.org/X9Yvd . To avoid that, you should only change to private modifier only, so, the change will only to private property:
 
 ```diff
+namespace Lib;
+
 class SomeClass
 {
     /** @var int */
