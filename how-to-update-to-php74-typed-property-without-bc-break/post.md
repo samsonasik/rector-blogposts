@@ -81,7 +81,7 @@ class SomeClass
 }
 ```
 
-Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have an library with the following structure:
+Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have a library with the following structure:
 
 ```
 lib
