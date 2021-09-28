@@ -85,7 +85,7 @@ class SomeClass
 
 Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have a library with the following structure:
 
-```
+```bash
 lib
 ├── composer.json
 ├── composer.lock
@@ -95,7 +95,7 @@ lib
 
 with composer.json config like this:
 
-```
+```javascript
 {
     "require": {
         "php": "^7.4"
