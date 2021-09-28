@@ -83,7 +83,7 @@ class SomeClass
 }
 ```
 
-Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have a library with the following structure:
+Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have a re-distributable package that can be consumed in our applications, with the following package structure:
 
 ```bash
 lib
@@ -106,17 +106,18 @@ with composer.json config like this:
         }
     }
 }
-
 ```
 
-Now, what you need is require the rector as dev dependency:
+Your package will be hosted in packagist or your own server.
+
+Now, what you need is require the rector as dev dependency by go to `lib` directory:
 
 ```bash
 cd lib/
 composer require --dev rector/rector
 ```
 
-Then, create a `rector.php` configuration inside the `lib`:
+Then, create a `rector.php` configuration inside the root of `lib` directory:
 
 ```php
 <?php
@@ -153,6 +154,7 @@ Above, we import php 7.4 set list, with configured `TypedPropertyRector` for upd
 Now, let's run rector to see the diff and verify:
 
 ```bash
+cd lib
 vendor/bin/rector --dry-run
 ```
 
@@ -161,6 +163,7 @@ vendor/bin/rector --dry-run
 Everything seems correct! Let's apply the change:
 
 ```bash
+cd lib
 vendor/bin/rector
 ```
 
