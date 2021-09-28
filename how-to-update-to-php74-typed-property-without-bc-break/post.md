@@ -83,7 +83,7 @@ class SomeClass
 }
 ```
 
-Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have a re-distributable package that can be consumed in our applications, with the following package structure:
+Want to automate that? You can use [Rector](https://github.com/rectorphp/rector) for it. First, let say, we have a re-usable package that can be consumed in our applications, with the following package structure:
 
 ```bash
 lib
@@ -117,7 +117,17 @@ cd lib/
 composer require --dev rector/rector
 ```
 
-Then, create a `rector.php` configuration inside the root of `lib` directory:
+Rector has rule named [`TypedPropertyRector`](https://github.com/rectorphp/rector-src/blob/7dedffe81273dbf59d38b72e2c7ecdc355fd8430/rules/Php74/Rector/Property/TypedPropertyRector.php#L43), that part of [`SetList::PHP_74`](https://github.com/rectorphp/rector-src/blob/7dedffe81273dbf59d38b72e2c7ecdc355fd8430/packages/Set/ValueObject/SetList.php#L167) constant.
+
+It default will update all modifiers:
+
+- public
+- protected
+- private
+
+If you are using on projects that not re-usable project, you can just use [`SetList::PHP_74`](https://github.com/rectorphp/rector-src/blob/7dedffe81273dbf59d38b72e2c7ecdc355fd8430/packages/Set/ValueObject/SetList.php#L167) constant as is. For our use case, you can override it by configure it to only apply to private property only.
+
+You can create a `rector.php` configuration inside the root of `lib` directory as follow:
 
 ```php
 <?php
